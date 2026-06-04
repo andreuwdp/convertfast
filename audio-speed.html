@@ -94,6 +94,24 @@
   footer p{font-size:12px;color:var(--text-dim);}
   @media(max-width:900px){.side-col{display:none;}.page-layout{padding:40px 5%;}}
   @media(max-width:768px){.nav-links{display:none;}}
+
+  /* HAMBURGER */
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all 0.3s;}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  /* MOBILE DASHBOARD */
+  .mobile-dashboard{position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--bg);z-index:190;overflow-y:auto;padding:20px 5% 40px;transform:translateX(100%);transition:transform 0.3s ease;display:none;}
+  .mobile-dashboard.open{transform:translateX(0);}
+  .dash-section{margin-bottom:28px;}
+  .dash-section-title{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim);margin-bottom:12px;}
+  .dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .dash-item{background:var(--card-bg,#161616);border:1px solid var(--border);border-radius:var(--radius-sm,8px);padding:14px;text-decoration:none;color:var(--text);display:flex;align-items:center;gap:10px;transition:all 0.2s;}
+  .dash-item:active{opacity:0.8;}
+  .dash-icon{font-size:20px;}
+  .dash-name{font-size:13px;font-weight:500;}
+  @media(max-width:768px){.nav-links{display:none!important;}.hamburger{display:flex!important;}.mobile-dashboard{display:block;}}
 </style>
 </head>
 <body>
@@ -101,11 +119,61 @@
   <a href="index.html" class="logo"><span class="logo-dot"></span>ConvertFast</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="audio-tools.html">Audio</a></li>
-    <li><a href="video-tools.html">Video</a></li>
     <li><a href="pdf-tools.html">PDF</a></li>
+    <li><a href="image-tools.html">Immagini</a></li>
+    <li><a href="video-tools.html">Video</a></li>
+    <li><a href="audio-tools.html">Audio</a></li>
+    <li><a href="doc-tools.html">Documenti</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleDashboard()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE DASHBOARD -->
+<div class="mobile-dashboard" id="mobile-dashboard">
+  <div class="dash-section">
+    <div class="dash-section-title">📄 PDF</div>
+    <div class="dash-grid">
+      <a href="pdf-to-word.html" class="dash-item"><span class="dash-icon">📝</span><span class="dash-name">PDF → Word</span></a>
+      <a href="word-to-pdf.html" class="dash-item"><span class="dash-icon">📘</span><span class="dash-name">Word → PDF</span></a>
+      <a href="compress-pdf.html" class="dash-item"><span class="dash-icon">🗜️</span><span class="dash-name">Comprimi PDF</span></a>
+      <a href="merge-pdf.html" class="dash-item"><span class="dash-icon">📚</span><span class="dash-name">Unisci PDF</span></a>
+      <a href="split-pdf.html" class="dash-item"><span class="dash-icon">✂️</span><span class="dash-name">Dividi PDF</span></a>
+      <a href="pdf-tools.html" class="dash-item"><span class="dash-icon">➕</span><span class="dash-name">Altri PDF</span></a>
+    </div>
+  </div>
+  <div class="dash-section">
+    <div class="dash-section-title">🖼️ Immagini</div>
+    <div class="dash-grid">
+      <a href="jpg-to-png.html" class="dash-item"><span class="dash-icon">🔄</span><span class="dash-name">JPG → PNG</span></a>
+      <a href="compress-image.html" class="dash-item"><span class="dash-icon">🗜️</span><span class="dash-name">Comprimi foto</span></a>
+      <a href="heic-to-jpg.html" class="dash-item"><span class="dash-icon">📱</span><span class="dash-name">HEIC → JPG</span></a>
+      <a href="png-to-webp.html" class="dash-item"><span class="dash-icon">⚡</span><span class="dash-name">PNG → WebP</span></a>
+      <a href="resize-image.html" class="dash-item"><span class="dash-icon">📐</span><span class="dash-name">Ridimensiona</span></a>
+      <a href="image-tools.html" class="dash-item"><span class="dash-icon">➕</span><span class="dash-name">Altri tool</span></a>
+    </div>
+  </div>
+  <div class="dash-section">
+    <div class="dash-section-title">🎬 Video & Audio</div>
+    <div class="dash-grid">
+      <a href="mp4-to-mp3.html" class="dash-item"><span class="dash-icon">🎵</span><span class="dash-name">MP4 → MP3</span></a>
+      <a href="compress-video.html" class="dash-item"><span class="dash-icon">🗜️</span><span class="dash-name">Comprimi video</span></a>
+      <a href="mp3-to-wav.html" class="dash-item"><span class="dash-icon">🎧</span><span class="dash-name">MP3 → WAV</span></a>
+      <a href="wav-to-mp3.html" class="dash-item"><span class="dash-icon">🎵</span><span class="dash-name">WAV → MP3</span></a>
+      <a href="video-tools.html" class="dash-item"><span class="dash-icon">🎬</span><span class="dash-name">Altri video</span></a>
+      <a href="audio-tools.html" class="dash-item"><span class="dash-icon">🎤</span><span class="dash-name">Altri audio</span></a>
+    </div>
+  </div>
+  <div class="dash-section">
+    <div class="dash-section-title">📝 Documenti</div>
+    <div class="dash-grid">
+      <a href="excel-to-pdf.html" class="dash-item"><span class="dash-icon">📗</span><span class="dash-name">Excel → PDF</span></a>
+      <a href="pptx-to-pdf.html" class="dash-item"><span class="dash-icon">📙</span><span class="dash-name">PPT → PDF</span></a>
+      <a href="doc-tools.html" class="dash-item"><span class="dash-icon">📝</span><span class="dash-name">Altri doc</span></a>
+    </div>
+  </div>
+</div>
 <div class="breadcrumb">
   <a href="index.html">Home</a> › <a href="audio-tools.html">Audio</a> › <span>Cambia Velocità</span>
 </div>
