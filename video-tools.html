@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strumenti Video Online Gratis — ConvertFast</title>
+<meta name="description" content="Converti e comprimi video online gratis. MP4, AVI, MOV, WebM, MKV. Estrai audio da video, converti formato, comprimi senza perdita di qualità.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0d0d0d;--bg2:#141414;--bg3:#1a1a1a;--border:rgba(255,255,255,0.07);--border-hover:rgba(255,255,255,0.15);--text:#f0ede8;--text-muted:#888580;--text-dim:#555;--accent:#e8f55a;--accent-dark:#c9d94a;--accent-glow:rgba(232,245,90,0.12);--card-bg:#161616;--radius:14px;--radius-sm:8px;--vid-color:rgba(150,80,220,0.15);--vid-border:rgba(150,80,220,0.25);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;}
+  nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px;}
+  .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .nav-links{display:flex;align-items:center;gap:8px;list-style:none;}
+  .nav-links a{color:var(--text-muted);text-decoration:none;font-size:14px;padding:6px 14px;border-radius:6px;transition:all 0.2s;}
+  .nav-links a:hover{color:var(--text);background:var(--bg3);}
+  .breadcrumb{padding:14px 5%;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-dim);}
+  .breadcrumb a{color:var(--text-dim);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--text-muted);}
+  .breadcrumb span{color:var(--text-muted);}
+
+  .page-hero{padding:56px 5% 64px;text-align:center;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(150,80,220,0.08) 0%,transparent 70%);pointer-events:none;}
+  .page-icon{width:72px;height:72px;border-radius:18px;background:var(--vid-color);border:1px solid var(--vid-border);display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 24px;}
+  h1{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-0.025em;margin-bottom:16px;}
+  .page-sub{color:var(--text-muted);font-size:17px;max-width:500px;margin:0 auto;}
+
+  .ad-section{padding:0 5%;display:flex;justify-content:center;margin-bottom:8px;}
+  .ad-banner{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);height:90px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:12px;letter-spacing:0.05em;text-transform:uppercase;width:100%;max-width:728px;}
+
+  .tools-section{padding:48px 5%;max-width:1100px;margin:0 auto;}
+  h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin-bottom:28px;letter-spacing:-0.01em;}
+  h3{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:16px;color:var(--text-muted);}
+
+  .big-tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:48px;}
+  .big-tool{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;text-decoration:none;color:var(--text);transition:all 0.25s;display:block;position:relative;overflow:hidden;}
+  .big-tool::after{content:'→';position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--text-dim);transition:all 0.2s;}
+  .big-tool:hover{border-color:var(--border-hover);transform:translateY(-2px);}
+  .big-tool:hover::after{right:18px;color:var(--accent);}
+  .bt-icon{font-size:32px;margin-bottom:14px;}
+  .bt-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:6px;}
+  .bt-desc{font-size:14px;color:var(--text-muted);line-height:1.5;max-width:220px;}
+  .bt-badge{display:inline-flex;align-items:center;gap:4px;background:var(--accent-glow);border:1px solid rgba(232,245,90,0.15);color:var(--accent);font-size:11px;font-weight:500;padding:3px 10px;border-radius:100px;margin-top:12px;}
+
+  .small-tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-bottom:48px;}
+  .small-tool{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 18px;display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);transition:all 0.2s;}
+  .small-tool:hover{border-color:var(--border-hover);background:var(--bg3);}
+  .st-icon{font-size:20px;}
+  .st-name{font-size:14px;font-weight:500;}
+  .st-desc{font-size:12px;color:var(--text-dim);margin-top:1px;}
+
+  .formats-strip{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:48px;}
+  .fmt-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text-muted);font-size:12px;font-weight:500;padding:5px 12px;border-radius:100px;}
+
+  .ad-inline{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);height:90px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:12px;letter-spacing:0.05em;text-transform:uppercase;margin:40px 0;}
+
+  /* CODEC INFO CARDS */
+  .codec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:48px;}
+  .codec-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px;}
+  .codec-name{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--accent);margin-bottom:6px;}
+  .codec-full{font-size:12px;color:var(--text-dim);margin-bottom:8px;}
+  .codec-desc{font-size:13px;color:var(--text-muted);line-height:1.5;}
+  .codec-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;}
+  .codec-tag{background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);font-size:10px;padding:2px 8px;border-radius:4px;}
+
+  /* NOTE BOX */
+  .note-box{background:rgba(232,245,90,0.05);border:1px solid rgba(232,245,90,0.15);border-radius:var(--radius-sm);padding:16px 20px;display:flex;gap:12px;align-items:flex-start;margin-bottom:48px;}
+  .note-icon{font-size:20px;flex-shrink:0;margin-top:2px;}
+  .note-text{font-size:14px;color:var(--text-muted);line-height:1.6;}
+  .note-text strong{color:var(--text);}
+
+  footer{border-top:1px solid var(--border);padding:32px 5%;display:flex;justify-content:space-between;align-items:center;}
+  .footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--text);display:flex;align-items:center;gap:6px;}
+  footer p{font-size:13px;color:var(--text-dim);}
+
+  @media(max-width:768px){.nav-links{display:none;}.big-tools{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><span class="logo-dot"></span>ConvertFast</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pdf-tools.html">PDF</a></li>
+    <li><a href="image-tools.html">Immagini</a></li>
+    <li><a href="audio-tools.html">Audio</a></li>
+    <li><a href="doc-tools.html">Documenti</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> › <span>Strumenti Video</span>
+</div>
+
+<section class="page-hero">
+  <div class="page-icon">🎬</div>
+  <h1>Strumenti Video</h1>
+  <p class="page-sub">Converti, comprimi ed estrai audio da video online gratis. MP4, MOV, AVI, WebM e molti altri formati.</p>
+</section>
+
+<div class="ad-section">
+  <div class="ad-banner">Spazio pubblicitario — 728×90</div>
+</div>
+
+<div class="tools-section">
+
+  <h2>Strumenti più usati</h2>
+  <div class="big-tools">
+    <a href="mp4-to-mp3.html" class="big-tool">
+      <div class="bt-icon">🎵</div>
+      <div class="bt-name">MP4 → MP3</div>
+      <p class="bt-desc">Estrai la traccia audio da qualsiasi video MP4 in formato MP3 di alta qualità.</p>
+      <div class="bt-badge">⚡ Più usato</div>
+    </a>
+    <a href="compress-video.html" class="big-tool">
+      <div class="bt-icon">🗜️</div>
+      <div class="bt-name">Comprimi video</div>
+      <p class="bt-desc">Riduci il peso del video senza perdere qualità visiva. Ideale per email e social.</p>
+      <div class="bt-badge">⚡ Più usato</div>
+    </a>
+    <a href="mov-to-mp4.html" class="big-tool">
+      <div class="bt-icon">🔄</div>
+      <div class="bt-name">MOV → MP4</div>
+      <p class="bt-desc">Converti video Apple QuickTime (.mov) in MP4 compatibile con tutti i dispositivi.</p>
+    </a>
+    <a href="mp4-to-gif.html" class="big-tool">
+      <div class="bt-icon">🎞️</div>
+      <div class="bt-name">MP4 → GIF</div>
+      <p class="bt-desc">Crea GIF animate da video MP4. Perfetto per meme, tutorial e presentazioni.</p>
+    </a>
+    <a href="avi-to-mp4.html" class="big-tool">
+      <div class="bt-icon">🎬</div>
+      <div class="bt-name">AVI → MP4</div>
+      <p class="bt-desc">Converti i vecchi file AVI in MP4 moderno per massima compatibilità.</p>
+    </a>
+    <a href="mp4-to-webm.html" class="big-tool">
+      <div class="bt-icon">🌐</div>
+      <div class="bt-name">MP4 → WebM</div>
+      <p class="bt-desc">Converti in WebM per video ottimizzati per browser e applicazioni web.</p>
+    </a>
+  </div>
+
+  <div class="ad-inline">Spazio pubblicitario — 728×90</div>
+
+  <h2>Tutti gli strumenti video</h2>
+
+  <h3>Converti formato</h3>
+  <div class="small-tools">
+    <a href="mkv-to-mp4.html" class="small-tool">
+      <span class="st-icon">🎬</span>
+      <div><div class="st-name">MKV → MP4</div><div class="st-desc">Matroska in MP4</div></div>
+    </a>
+    <a href="wmv-to-mp4.html" class="small-tool">
+      <span class="st-icon">🎬</span>
+      <div><div class="st-name">WMV → MP4</div><div class="st-desc">Windows Media in MP4</div></div>
+    </a>
+    <a href="flv-to-mp4.html" class="small-tool">
+      <span class="st-icon">🎬</span>
+      <div><div class="st-name">FLV → MP4</div><div class="st-desc">Flash Video in MP4</div></div>
+    </a>
+    <a href="mp4-to-mov.html" class="small-tool">
+      <span class="st-icon">🔄</span>
+      <div><div class="st-name">MP4 → MOV</div><div class="st-desc">Per iMovie e Final Cut</div></div>
+    </a>
+    <a href="webm-to-mp4.html" class="small-tool">
+      <span class="st-icon">🔄</span>
+      <div><div class="st-name">WebM → MP4</div><div class="st-desc">Web video in MP4</div></div>
+    </a>
+    <a href="3gp-to-mp4.html" class="small-tool">
+      <span class="st-icon">📱</span>
+      <div><div class="st-name">3GP → MP4</div><div class="st-desc">Video mobile in MP4</div></div>
+    </a>
+  </div>
+
+  <h3>Estrai audio</h3>
+  <div class="small-tools">
+    <a href="mp4-to-mp3.html" class="small-tool">
+      <span class="st-icon">🎵</span>
+      <div><div class="st-name">MP4 → MP3</div><div class="st-desc">Estrai audio da video</div></div>
+    </a>
+    <a href="mp4-to-wav.html" class="small-tool">
+      <span class="st-icon">🎧</span>
+      <div><div class="st-name">MP4 → WAV</div><div class="st-desc">Audio lossless</div></div>
+    </a>
+    <a href="mp4-to-aac.html" class="small-tool">
+      <span class="st-icon">🎶</span>
+      <div><div class="st-name">MP4 → AAC</div><div class="st-desc">Per Apple devices</div></div>
+    </a>
+    <a href="video-to-audio.html" class="small-tool">
+      <span class="st-icon">🎼</span>
+      <div><div class="st-name">Video → Audio</div><div class="st-desc">Qualsiasi formato</div></div>
+    </a>
+  </div>
+
+  <h3>Modifica video</h3>
+  <div class="small-tools">
+    <a href="trim-video.html" class="small-tool">
+      <span class="st-icon">✂️</span>
+      <div><div class="st-name">Taglia video</div><div class="st-desc">Ritaglia inizio e fine</div></div>
+    </a>
+    <a href="rotate-video.html" class="small-tool">
+      <span class="st-icon">🔄</span>
+      <div><div class="st-name">Ruota video</div><div class="st-desc">90° 180° 270°</div></div>
+    </a>
+    <a href="mute-video.html" class="small-tool">
+      <span class="st-icon">🔇</span>
+      <div><div class="st-name">Rimuovi audio</div><div class="st-desc">Video senza suono</div></div>
+    </a>
+    <a href="video-to-frames.html" class="small-tool">
+      <span class="st-icon">🖼️</span>
+      <div><div class="st-name">Video → Frame</div><div class="st-desc">Estrai fotogrammi</div></div>
+    </a>
+  </div>
+
+  <h2>Formati video supportati</h2>
+  <div class="formats-strip">
+    <span class="fmt-pill">MP4</span><span class="fmt-pill">MOV</span><span class="fmt-pill">AVI</span>
+    <span class="fmt-pill">MKV</span><span class="fmt-pill">WebM</span><span class="fmt-pill">WMV</span>
+    <span class="fmt-pill">FLV</span><span class="fmt-pill">3GP</span><span class="fmt-pill">OGV</span>
+    <span class="fmt-pill">M4V</span><span class="fmt-pill">MPEG</span><span class="fmt-pill">MPG</span>
+    <span class="fmt-pill">TS</span><span class="fmt-pill">VOB</span>
+  </div>
+
+  <div class="note-box">
+    <span class="note-icon">⚡</span>
+    <p class="note-text"><strong>Nota sui file grandi:</strong> La conversione video richiede più tempo rispetto a PDF e immagini. File da 500 MB possono richiedere 2-5 minuti. Il piano Pro supporta file fino a 2 GB con priorità di elaborazione.</p>
+  </div>
+
+  <h2>Guida ai formati video</h2>
+  <div class="codec-grid">
+    <div class="codec-card">
+      <div class="codec-name">MP4</div>
+      <div class="codec-full">MPEG-4 Part 14</div>
+      <p class="codec-desc">Il formato più diffuso al mondo. Compatibile con tutti i dispositivi, browser e piattaforme social. Il formato standard per video online.</p>
+      <div class="codec-tags"><span class="codec-tag">🌐 Universal</span><span class="codec-tag">📱 Mobile</span></div>
+    </div>
+    <div class="codec-card">
+      <div class="codec-name">MOV</div>
+      <div class="codec-full">QuickTime Movie</div>
+      <p class="codec-desc">Formato Apple. Alta qualità, file più grandi. Ideale per editing professionale con iMovie, Final Cut Pro e DaVinci Resolve su Mac.</p>
+      <div class="codec-tags"><span class="codec-tag">🍎 Apple</span><span class="codec-tag">🎬 Editing</span></div>
+    </div>
+    <div class="codec-card">
+      <div class="codec-name">MKV</div>
+      <div class="codec-full">Matroska Video</div>
+      <p class="codec-desc">Container aperto che supporta più tracce audio, sottotitoli e capitoli. Popolare per film in HD e 4K. Non compatibile con tutti i dispositivi.</p>
+      <div class="codec-tags"><span class="codec-tag">🎥 HD/4K</span><span class="codec-tag">📂 Multi-track</span></div>
+    </div>
+    <div class="codec-card">
+      <div class="codec-name">WebM</div>
+      <div class="codec-full">Web Media</div>
+      <p class="codec-desc">Formato Google ottimizzato per il web. Leggero, open source, supportato da tutti i browser moderni. Ideale per video su siti web.</p>
+      <div class="codec-tags"><span class="codec-tag">🌐 Web</span><span class="codec-tag">⚡ Leggero</span></div>
+    </div>
+    <div class="codec-card">
+      <div class="codec-name">AVI</div>
+      <div class="codec-full">Audio Video Interleave</div>
+      <p class="codec-desc">Formato Microsoft degli anni '90. File molto grandi, qualità elevata. Ancora usato in certi contesti professionali, ma ormai superato da MP4.</p>
+      <div class="codec-tags"><span class="codec-tag">🪟 Windows</span><span class="codec-tag">📼 Vintage</span></div>
+    </div>
+    <div class="codec-card">
+      <div class="codec-name">GIF</div>
+      <div class="codec-full">Graphics Interchange Format</div>
+      <p class="codec-desc">Tecnicamente un formato immagine animata. File pesanti e qualità limitata a 256 colori. Usato per clip brevi, meme e reazioni sui social.</p>
+      <div class="codec-tags"><span class="codec-tag">😂 Social</span><span class="codec-tag">🔁 Loop</span></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo"><span class="logo-dot"></span>ConvertFast</div>
+  <p>© 2025 ConvertFast — Tutti i diritti riservati</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Converti JPG in PNG Online Gratis — ConvertFast</title>
+<meta name="description" content="Converti immagini JPG in PNG online gratis. Qualità perfetta, sfondo trasparente, nessuna registrazione richiesta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0d0d0d;--bg2:#141414;--bg3:#1a1a1a;--border:rgba(255,255,255,0.07);--border-hover:rgba(255,255,255,0.15);--text:#f0ede8;--text-muted:#888580;--text-dim:#555;--accent:#e8f55a;--accent-dark:#c9d94a;--accent-glow:rgba(232,245,90,0.12);--card-bg:#161616;--radius:14px;--radius-sm:8px;--success:#3ecf8e;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;}
+  nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px;}
+  .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .nav-links{display:flex;align-items:center;gap:8px;list-style:none;}
+  .nav-links a{color:var(--text-muted);text-decoration:none;font-size:14px;padding:6px 14px;border-radius:6px;transition:all 0.2s;}
+  .nav-links a:hover{color:var(--text);background:var(--bg3);}
+  .breadcrumb{padding:14px 5%;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-dim);}
+  .breadcrumb a{color:var(--text-dim);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--text-muted);}
+  .breadcrumb span{color:var(--text-muted);}
+
+  .ad-top{padding:16px 5% 0;display:flex;justify-content:center;}
+  .ad-banner{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);height:90px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:12px;letter-spacing:0.05em;text-transform:uppercase;width:100%;max-width:728px;}
+
+  .page-layout{display:flex;gap:32px;max-width:1100px;margin:0 auto;padding:48px 5%;}
+  .main-col{flex:1;min-width:0;}
+  .side-col{width:300px;flex-shrink:0;}
+  .ad-side{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);height:600px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:12px;letter-spacing:0.05em;text-transform:uppercase;writing-mode:vertical-rl;position:sticky;top:80px;}
+
+  h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-0.025em;margin-bottom:12px;}
+  .hero-sub{color:var(--text-muted);font-size:16px;margin-bottom:40px;font-weight:300;}
+  .step-badges{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap;}
+  .badge{display:inline-flex;align-items:center;gap:5px;background:var(--bg3);border:1px solid var(--border);color:var(--text-muted);font-size:12px;padding:4px 12px;border-radius:100px;transition:all 0.3s;}
+  .badge.active{background:var(--accent-glow);border-color:rgba(232,245,90,0.2);color:var(--accent);}
+
+  /* MULTI-FILE UPLOAD */
+  .upload-zone{background:var(--card-bg);border:1.5px dashed rgba(80,150,220,0.3);border-radius:20px;padding:56px 32px;text-align:center;cursor:pointer;transition:all 0.25s;}
+  .upload-zone:hover,.upload-zone.dragging{border-color:rgba(80,150,220,0.6);background:rgba(80,150,220,0.03);}
+  .uz-icon{font-size:48px;margin-bottom:20px;display:block;}
+  .uz-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px;}
+  .uz-sub{color:var(--text-muted);font-size:14px;margin-bottom:24px;}
+  .uz-sub strong{color:#5096dc;}
+  .btn-primary{background:var(--accent);color:#0d0d0d;border:none;padding:13px 36px;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;display:inline-block;}
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px);}
+  .uz-note{margin-top:14px;font-size:12px;color:var(--text-dim);}
+  .uz-formats{display:flex;gap:6px;justify-content:center;margin-bottom:20px;flex-wrap:wrap;}
+  .fmt-tag{background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);font-size:11px;padding:3px 10px;border-radius:100px;}
+  #file-input{display:none;}
+
+  /* FILES LIST */
+  .files-section{display:none;}
+  .files-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+  .files-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;}
+  .btn-add-more{background:none;border:1px solid var(--border);color:var(--text-muted);padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px;font-family:'DM Sans',sans-serif;transition:all 0.2s;}
+  .btn-add-more:hover{border-color:var(--border-hover);color:var(--text);}
+  .files-list{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;}
+  .file-row{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 18px;display:flex;align-items:center;gap:14px;}
+  .fr-preview{width:44px;height:44px;border-radius:6px;object-fit:cover;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;overflow:hidden;}
+  .fr-preview img{width:100%;height:100%;object-fit:cover;border-radius:6px;}
+  .fr-info{flex:1;min-width:0;}
+  .fr-name{font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .fr-size{font-size:12px;color:var(--text-dim);margin-top:2px;}
+  .fr-status{font-size:12px;padding:3px 10px;border-radius:100px;font-weight:500;}
+  .fr-status.pending{background:var(--bg3);color:var(--text-dim);}
+  .fr-status.converting{background:rgba(232,245,90,0.1);color:var(--accent);}
+  .fr-status.done{background:rgba(62,207,142,0.1);color:var(--success);}
+  .fr-remove{background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:16px;padding:4px;transition:color 0.2s;}
+  .fr-remove:hover{color:var(--text-muted);}
+
+  /* OPTIONS */
+  .options-box{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:20px;}
+  .options-title{font-size:14px;font-weight:500;color:var(--text-muted);margin-bottom:16px;display:flex;align-items:center;gap:6px;}
+  .opt-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);}
+  .opt-row:last-child{border-bottom:none;padding-bottom:0;}
+  .opt-label{font-size:14px;}
+  .opt-sub{font-size:12px;color:var(--text-dim);margin-top:2px;}
+  .opt-control select,.opt-control input{background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:6px;font-size:13px;font-family:'DM Sans',sans-serif;cursor:pointer;}
+  .opt-control select:focus,.opt-control input:focus{outline:none;border-color:var(--border-hover);}
+  /* toggle */
+  .toggle{position:relative;width:38px;height:20px;cursor:pointer;}
+  .toggle input{opacity:0;width:0;height:0;}
+  .toggle-slider{position:absolute;inset:0;background:var(--bg3);border:1px solid var(--border);border-radius:100px;transition:all 0.2s;}
+  .toggle-slider::before{content:'';position:absolute;width:14px;height:14px;left:2px;top:2px;background:var(--text-dim);border-radius:50%;transition:all 0.2s;}
+  .toggle input:checked+.toggle-slider{background:var(--accent-glow);border-color:rgba(232,245,90,0.3);}
+  .toggle input:checked+.toggle-slider::before{transform:translateX(18px);background:var(--accent);}
+
+  .btn-convert-all{background:var(--accent);color:#0d0d0d;border:none;padding:14px 40px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;width:100%;margin-bottom:12px;}
+  .btn-convert-all:hover{background:var(--accent-dark);transform:translateY(-1px);}
+
+  /* DONE STATE */
+  .done-bar{display:none;background:rgba(62,207,142,0.08);border:1px solid rgba(62,207,142,0.2);border-radius:var(--radius);padding:20px 24px;margin-bottom:20px;display:none;align-items:center;justify-content:space-between;gap:16px;}
+  .done-info{display:flex;align-items:center;gap:10px;}
+  .done-icon{font-size:24px;}
+  .done-text{font-size:15px;font-weight:500;color:var(--success);}
+  .done-sub{font-size:13px;color:var(--text-muted);}
+  .btn-dl-all{background:var(--success);color:#0d0d0d;border:none;padding:11px 24px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;white-space:nowrap;}
+  .btn-dl-all:hover{opacity:0.9;}
+  .btn-reset{background:none;border:1px solid var(--border);color:var(--text-muted);padding:10px 24px;border-radius:8px;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%;margin-top:8px;transition:all 0.2s;}
+  .btn-reset:hover{border-color:var(--border-hover);color:var(--text);}
+
+  .ad-inline{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);height:90px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:12px;letter-spacing:0.05em;text-transform:uppercase;margin:40px 0;}
+
+  /* RELATED */
+  .related{padding:0 5% 64px;max-width:1100px;margin:0 auto;}
+  .related h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:20px;letter-spacing:-0.01em;}
+  .rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;}
+  .rel-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);transition:all 0.2s;}
+  .rel-card:hover{border-color:var(--border-hover);background:var(--bg3);}
+  .rel-icon{font-size:18px;}
+  .rel-name{font-size:13px;font-weight:500;}
+
+  /* FAQ */
+  .faq-section{padding:0 5% 64px;max-width:760px;margin:0 auto;}
+  .faq-section h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin-bottom:24px;letter-spacing:-0.01em;}
+  .faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
+  .faq-q{font-size:15px;font-weight:500;margin-bottom:8px;}
+  .faq-a{font-size:14px;color:var(--text-muted);line-height:1.7;}
+
+  footer{border-top:1px solid var(--border);padding:32px 5%;display:flex;justify-content:space-between;align-items:center;}
+  .footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--text);display:flex;align-items:center;gap:6px;}
+  footer p{font-size:13px;color:var(--text-dim);}
+
+  @media(max-width:900px){.side-col{display:none;}.page-layout{padding:48px 5%;}}
+  @media(max-width:768px){.nav-links{display:none;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><span class="logo-dot"></span>ConvertFast</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="image-tools.html">Immagini</a></li>
+    <li><a href="pdf-tools.html">PDF</a></li>
+    <li><a href="video-tools.html">Video</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> › <a href="image-tools.html">Immagini</a> › <span>JPG in PNG</span>
+</div>
+
+<div class="ad-top">
+  <div class="ad-banner">Spazio pubblicitario — 728×90</div>
+</div>
+
+<div class="page-layout">
+  <div class="main-col">
+
+    <h1>Converti JPG in PNG</h1>
+    <p class="hero-sub">Trasforma le tue immagini JPG in PNG online, gratis. Converti più file contemporaneamente con un solo click.</p>
+
+    <div class="step-badges">
+      <div class="badge active" id="b1">① Carica immagini</div>
+      <div class="badge" id="b2">② Imposta opzioni</div>
+      <div class="badge" id="b3">③ Scarica PNG</div>
+    </div>
+
+    <!-- UPLOAD -->
+    <div id="state-upload">
+      <div class="upload-zone" id="drop-zone">
+        <span class="uz-icon">🖼️</span>
+        <div class="uz-formats">
+          <span class="fmt-tag">JPG</span>
+          <span class="fmt-tag">JPEG</span>
+          <span class="fmt-tag">JPE</span>
+          <span class="fmt-tag">JFIF</span>
+        </div>
+        <div class="uz-title">Trascina le immagini JPG qui</div>
+        <p class="uz-sub">Oppure <strong>clicca per sfogliare</strong> — più file supportati</p>
+        <button class="btn-primary" onclick="document.getElementById('file-input').click()">Scegli immagini</button>
+        <input type="file" id="file-input" accept=".jpg,.jpeg,.jpe,.jfif,image/jpeg" multiple>
+        <p class="uz-note">🔒 Max 100 MB per file · Eliminati dopo 1 ora</p>
+      </div>
+    </div>
+
+    <!-- FILES + OPTIONS -->
+    <div id="state-files" class="files-section">
+
+      <div class="files-header">
+        <span class="files-title" id="files-count">3 immagini selezionate</span>
+        <button class="btn-add-more" onclick="document.getElementById('file-input').click()">+ Aggiungi altri</button>
+      </div>
+
+      <div class="files-list" id="files-list"></div>
+
+      <div class="options-box">
+        <div class="options-title">⚙️ Opzioni conversione</div>
+        <div class="opt-row">
+          <div>
+            <div class="opt-label">Qualità immagine</div>
+            <div class="opt-sub">PNG è lossless — qualità sempre massima</div>
+          </div>
+          <div class="opt-control">
+            <select>
+              <option>Massima (lossless)</option>
+            </select>
+          </div>
+        </div>
+        <div class="opt-row">
+          <div>
+            <div class="opt-label">Sfondo trasparente</div>
+            <div class="opt-sub">Rimuovi sfondo bianco convertendolo in trasparente</div>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="toggle-transparent">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="opt-row">
+          <div>
+            <div class="opt-label">Mantieni metadati EXIF</div>
+            <div class="opt-sub">Conserva data, posizione GPS e info camera</div>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="toggle-exif" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="opt-row">
+          <div>
+            <div class="opt-label">Scarica come</div>
+            <div class="opt-sub">Archivio ZIP se più di un file</div>
+          </div>
+          <div class="opt-control">
+            <select id="dl-mode">
+              <option value="zip">Archivio ZIP</option>
+              <option value="single">File singoli</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-convert-all" id="btn-convert" onclick="startConvertAll()">⚡ Converti tutto in PNG</button>
+
+      <!-- DONE BAR -->
+      <div id="done-bar" class="done-bar" style="display:none;">
+        <div class="done-info">
+          <span class="done-icon">✅</span>
+          <div>
+            <div class="done-text">Conversione completata!</div>
+            <div class="done-sub" id="done-sub">3 file pronti</div>
+          </div>
+        </div>
+        <button class="btn-dl-all">⬇️ Scarica ZIP</button>
+      </div>
+
+      <button class="btn-reset" onclick="resetAll()">↩ Inizia da capo</button>
+
+    </div>
+
+    <div class="ad-inline">Spazio pubblicitario — 728×90</div>
+
+  </div>
+
+  <div class="side-col">
+    <div class="ad-side">300×600 — Pubblicità</div>
+  </div>
+</div>
+
+<!-- RELATED -->
+<div class="related">
+  <h2>Strumenti correlati</h2>
+  <div class="rel-grid">
+    <a href="png-to-jpg.html" class="rel-card"><span class="rel-icon">🔃</span><span class="rel-name">PNG → JPG</span></a>
+    <a href="compress-image.html" class="rel-card"><span class="rel-icon">🗜️</span><span class="rel-name">Comprimi immagine</span></a>
+    <a href="jpg-to-webp.html" class="rel-card"><span class="rel-icon">🌐</span><span class="rel-name">JPG → WebP</span></a>
+    <a href="heic-to-jpg.html" class="rel-card"><span class="rel-icon">📱</span><span class="rel-name">HEIC → JPG</span></a>
+    <a href="resize-image.html" class="rel-card"><span class="rel-icon">📐</span><span class="rel-name">Ridimensiona</span></a>
+    <a href="png-to-webp.html" class="rel-card"><span class="rel-icon">⚡</span><span class="rel-name">PNG → WebP</span></a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <h2>Domande frequenti</h2>
+  <div class="faq-item">
+    <div class="faq-q">Qual è la differenza tra JPG e PNG?</div>
+    <p class="faq-a">JPG usa una compressione con perdita di qualità — ideale per fotografie. PNG usa una compressione senza perdita e supporta la trasparenza — ideale per grafica, loghi e screenshot. Convertendo da JPG a PNG il file sarà più grande ma di qualità massima.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Posso convertire più immagini contemporaneamente?</div>
+    <p class="faq-a">Sì! Puoi caricare quante immagini vuoi e convertirle tutte con un solo click. Il risultato verrà scaricato come archivio ZIP contenente tutti i file PNG.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">La conversione riduce la qualità dell'immagine?</div>
+    <p class="faq-a">No. PNG è un formato lossless (senza perdita), quindi la conversione da JPG a PNG non riduce ulteriormente la qualità. L'immagine PNG avrà la stessa qualità del JPG originale.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Cosa significa "sfondo trasparente"?</div>
+    <p class="faq-a">A differenza di JPG, PNG supporta la trasparenza. Abilitando questa opzione, il convertitore tenterà di rimuovere lo sfondo bianco dell'immagine sostituendolo con un'area trasparente nel PNG risultante.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo"><span class="logo-dot"></span>ConvertFast</div>
+  <p>© 2025 ConvertFast — Tutti i diritti riservati</p>
+</footer>
+
+<script>
+  const dropZone = document.getElementById('drop-zone');
+  const fileInput = document.getElementById('file-input');
+  let allFiles = [];
+
+  ['dragenter','dragover'].forEach(e => dropZone.addEventListener(e, ev=>{ev.preventDefault();dropZone.classList.add('dragging');}));
+  ['dragleave','drop'].forEach(e => dropZone.addEventListener(e, ev=>{ev.preventDefault();dropZone.classList.remove('dragging');}));
+  dropZone.addEventListener('drop', ev=>{ if(ev.dataTransfer.files.length) addFiles(Array.from(ev.dataTransfer.files)); });
+  fileInput.addEventListener('change', ()=>{ if(fileInput.files.length) addFiles(Array.from(fileInput.files)); fileInput.value=''; });
+
+  function addFiles(newFiles) {
+    newFiles.forEach(f => { if(!allFiles.find(x=>x.name===f.name)) allFiles.push(f); });
+    showFilesState();
+  }
+
+  function showFilesState() {
+    document.getElementById('state-upload').style.display = 'none';
+    document.getElementById('state-files').style.display = 'block';
+    document.getElementById('b2').classList.add('active');
+    renderFileList();
+  }
+
+  function renderFileList() {
+    const list = document.getElementById('files-list');
+    document.getElementById('files-count').textContent = allFiles.length + (allFiles.length===1?' immagine selezionata':' immagini selezionate');
+    list.innerHTML = '';
+    allFiles.forEach((f,i) => {
+      const row = document.createElement('div');
+      row.className = 'file-row';
+      row.id = 'row-'+i;
+      const preview = document.createElement('div');
+      preview.className = 'fr-preview';
+      const img = document.createElement('img');
+      img.src = URL.createObjectURL(f);
+      preview.appendChild(img);
+      const mb = (f.size/(1024*1024)).toFixed(1);
+      row.innerHTML = `
+        <div class="fr-preview"><img src="${URL.createObjectURL(f)}" style="width:100%;height:100%;object-fit:cover;border-radius:6px;"></div>
+        <div class="fr-info">
+          <div class="fr-name">${f.name}</div>
+          <div class="fr-size">${mb} MB</div>
+        </div>
+        <span class="fr-status pending" id="status-${i}">In attesa</span>
+        <button class="fr-remove" onclick="removeFile(${i})">✕</button>
+      `;
+      list.appendChild(row);
+    });
+  }
+
+  function removeFile(i) {
+    allFiles.splice(i,1);
+    if(allFiles.length===0) resetAll();
+    else renderFileList();
+  }
+
+  function startConvertAll() {
+    document.getElementById('btn-convert').disabled = true;
+    document.getElementById('btn-convert').textContent = '⚙️ Conversione in corso...';
+    document.getElementById('done-bar').style.display = 'none';
+    let done = 0;
+    allFiles.forEach((_,i) => {
+      document.getElementById('status-'+i).className = 'fr-status converting';
+      document.getElementById('status-'+i).textContent = 'Conversione...';
+      const delay = 800 + i*600 + Math.random()*400;
+      setTimeout(()=>{
+        document.getElementById('status-'+i).className = 'fr-status done';
+        document.getElementById('status-'+i).textContent = '✓ PNG pronto';
+        done++;
+        if(done===allFiles.length) allDone();
+      }, delay);
+    });
+  }
+
+  function allDone() {
+    document.getElementById('b3').classList.add('active');
+    document.getElementById('btn-convert').style.display = 'none';
+    const bar = document.getElementById('done-bar');
+    bar.style.display = 'flex';
+    document.getElementById('done-sub').textContent = allFiles.length+' file convertiti in PNG';
+  }
+
+  function resetAll() {
+    allFiles = [];
+    document.getElementById('state-upload').style.display = 'block';
+    document.getElementById('state-files').style.display = 'none';
+    document.getElementById('done-bar').style.display = 'none';
+    const btn = document.getElementById('btn-convert');
+    btn.style.display = 'block'; btn.disabled = false;
+    btn.textContent = '⚡ Converti tutto in PNG';
+    ['b2','b3'].forEach(id=>document.getElementById(id).classList.remove('active'));
+  }
+</script>
+
+</body>
+</html>

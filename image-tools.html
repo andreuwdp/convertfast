@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strumenti Immagini Gratis Online — ConvertFast</title>
+<meta name="description" content="Converti, comprimi e ridimensiona immagini online gratis. JPG, PNG, WebP, HEIC, SVG e molti altri formati supportati.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0d0d0d;--bg2:#141414;--bg3:#1a1a1a;
+    --border:rgba(255,255,255,0.07);--border-hover:rgba(255,255,255,0.15);
+    --text:#f0ede8;--text-muted:#888580;--text-dim:#555;
+    --accent:#e8f55a;--accent-dark:#c9d94a;--accent-glow:rgba(232,245,90,0.12);
+    --card-bg:#161616;--radius:14px;--radius-sm:8px;
+    --img-color:rgba(80,150,220,0.15);--img-border:rgba(80,150,220,0.25);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;}
+  nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px;}
+  .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .nav-links{display:flex;align-items:center;gap:8px;list-style:none;}
+  .nav-links a{color:var(--text-muted);text-decoration:none;font-size:14px;padding:6px 14px;border-radius:6px;transition:all 0.2s;}
+  .nav-links a:hover{color:var(--text);background:var(--bg3);}
+  .breadcrumb{padding:14px 5%;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-dim);}
+  .breadcrumb a{color:var(--text-dim);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--text-muted);}
+  .breadcrumb span{color:var(--text-muted);}
+
+  .page-hero{padding:56px 5% 64px;text-align:center;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(80,150,220,0.08) 0%,transparent 70%);pointer-events:none;}
+  .page-icon{width:72px;height:72px;border-radius:18px;background:var(--img-color);border:1px solid var(--img-border);display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 24px;}
+  h1{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-0.025em;margin-bottom:16px;}
+  .page-sub{color:var(--text-muted);font-size:17px;max-width:480px;margin:0 auto;}
+
+  .ad-section{padding:0 5%;display:flex;justify-content:center;margin-bottom:8px;}
+  .ad-banner{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);height:90px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:12px;letter-spacing:0.05em;text-transform:uppercase;width:100%;max-width:728px;}
+
+  .tools-section{padding:48px 5%;max-width:1100px;margin:0 auto;}
+  h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin-bottom:28px;letter-spacing:-0.01em;}
+
+  .big-tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:48px;}
+  .big-tool{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;text-decoration:none;color:var(--text);transition:all 0.25s;display:block;position:relative;overflow:hidden;}
+  .big-tool::after{content:'→';position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--text-dim);transition:all 0.2s;}
+  .big-tool:hover{border-color:var(--border-hover);transform:translateY(-2px);}
+  .big-tool:hover::after{right:18px;color:var(--accent);}
+  .bt-icon{font-size:32px;margin-bottom:14px;}
+  .bt-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:6px;}
+  .bt-desc{font-size:14px;color:var(--text-muted);line-height:1.5;max-width:220px;}
+  .bt-badge{display:inline-flex;align-items:center;gap:4px;background:var(--accent-glow);border:1px solid rgba(232,245,90,0.15);color:var(--accent);font-size:11px;font-weight:500;padding:3px 10px;border-radius:100px;margin-top:12px;}
+
+  .formats-strip{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:48px;}
+  .fmt-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text-muted);font-size:12px;font-weight:500;padding:5px 12px;border-radius:100px;font-family:'DM Sans',sans-serif;}
+
+  .small-tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-bottom:48px;}
+  .small-tool{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 18px;display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);transition:all 0.2s;}
+  .small-tool:hover{border-color:var(--border-hover);background:var(--bg3);}
+  .st-icon{font-size:20px;}
+  .st-name{font-size:14px;font-weight:500;}
+  .st-desc{font-size:12px;color:var(--text-dim);margin-top:1px;}
+
+  .ad-inline{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);height:90px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:12px;letter-spacing:0.05em;text-transform:uppercase;margin:40px 0;}
+
+  /* FORMAT GUIDE */
+  .guide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:48px;}
+  .guide-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px;}
+  .guide-fmt{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--accent);margin-bottom:6px;}
+  .guide-name{font-size:13px;font-weight:500;margin-bottom:6px;}
+  .guide-desc{font-size:12px;color:var(--text-muted);line-height:1.5;}
+  .guide-tag{display:inline-block;background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);font-size:10px;padding:2px 8px;border-radius:4px;margin-top:8px;}
+
+  footer{border-top:1px solid var(--border);padding:32px 5%;display:flex;justify-content:space-between;align-items:center;}
+  .footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--text);display:flex;align-items:center;gap:6px;}
+  footer p{font-size:13px;color:var(--text-dim);}
+
+  @media(max-width:768px){.nav-links{display:none;}.big-tools{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><span class="logo-dot"></span>ConvertFast</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pdf-tools.html">PDF</a></li>
+    <li><a href="video-tools.html">Video</a></li>
+    <li><a href="audio-tools.html">Audio</a></li>
+    <li><a href="doc-tools.html">Documenti</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> › <span>Strumenti Immagini</span>
+</div>
+
+<section class="page-hero">
+  <div class="page-icon">🖼️</div>
+  <h1>Strumenti Immagini</h1>
+  <p class="page-sub">Converti, comprimi e ridimensiona immagini online gratis. JPG, PNG, WebP, HEIC e molti altri formati.</p>
+</section>
+
+<div class="ad-section">
+  <div class="ad-banner">Spazio pubblicitario — 728×90</div>
+</div>
+
+<div class="tools-section">
+
+  <h2>Conversioni più popolari</h2>
+  <div class="big-tools">
+    <a href="jpg-to-png.html" class="big-tool">
+      <div class="bt-icon">🔄</div>
+      <div class="bt-name">JPG → PNG</div>
+      <p class="bt-desc">Converti immagini JPG in PNG con sfondo trasparente supportato.</p>
+      <div class="bt-badge">⚡ Più usato</div>
+    </a>
+    <a href="png-to-jpg.html" class="big-tool">
+      <div class="bt-icon">🖼️</div>
+      <div class="bt-name">PNG → JPG</div>
+      <p class="bt-desc">Converti PNG in JPG riducendo il peso del file mantenendo la qualità.</p>
+    </a>
+    <a href="compress-image.html" class="big-tool">
+      <div class="bt-icon">🗜️</div>
+      <div class="bt-name">Comprimi immagine</div>
+      <p class="bt-desc">Riduci il peso di JPG e PNG fino all'80% senza perdita visibile di qualità.</p>
+      <div class="bt-badge">⚡ Più usato</div>
+    </a>
+    <a href="heic-to-jpg.html" class="big-tool">
+      <div class="bt-icon">📱</div>
+      <div class="bt-name">HEIC → JPG</div>
+      <p class="bt-desc">Converti foto iPhone (HEIC/HEIF) in JPG compatibile con tutti i dispositivi.</p>
+    </a>
+    <a href="png-to-webp.html" class="big-tool">
+      <div class="bt-icon">⚡</div>
+      <div class="bt-name">PNG → WebP</div>
+      <p class="bt-desc">Converti in WebP per siti più veloci. Fino al 30% più leggero di PNG.</p>
+    </a>
+    <a href="webp-to-jpg.html" class="big-tool">
+      <div class="bt-icon">🔃</div>
+      <div class="bt-name">WebP → JPG</div>
+      <p class="bt-desc">Converti immagini WebP in JPG per massima compatibilità.</p>
+    </a>
+  </div>
+
+  <div class="ad-inline">Spazio pubblicitario — 728×90</div>
+
+  <h2>Altri strumenti immagini</h2>
+  <div class="small-tools">
+    <a href="resize-image.html" class="small-tool">
+      <span class="st-icon">📐</span>
+      <div><div class="st-name">Ridimensiona immagine</div><div class="st-desc">Pixel o percentuale</div></div>
+    </a>
+    <a href="crop-image.html" class="small-tool">
+      <span class="st-icon">✂️</span>
+      <div><div class="st-name">Ritaglia immagine</div><div class="st-desc">Formato libero o preset</div></div>
+    </a>
+    <a href="jpg-to-webp.html" class="small-tool">
+      <span class="st-icon">🌐</span>
+      <div><div class="st-name">JPG → WebP</div><div class="st-desc">Ottimizzato per il web</div></div>
+    </a>
+    <a href="gif-to-mp4.html" class="small-tool">
+      <span class="st-icon">🎞️</span>
+      <div><div class="st-name">GIF → MP4</div><div class="st-desc">Video leggero da GIF</div></div>
+    </a>
+    <a href="svg-to-png.html" class="small-tool">
+      <span class="st-icon">✏️</span>
+      <div><div class="st-name">SVG → PNG</div><div class="st-desc">Vettoriale in raster</div></div>
+    </a>
+    <a href="png-to-ico.html" class="small-tool">
+      <span class="st-icon">🔖</span>
+      <div><div class="st-name">PNG → ICO</div><div class="st-desc">Crea favicon</div></div>
+    </a>
+    <a href="bmp-to-jpg.html" class="small-tool">
+      <span class="st-icon">🖼️</span>
+      <div><div class="st-name">BMP → JPG</div><div class="st-desc">Converti bitmap</div></div>
+    </a>
+    <a href="tiff-to-jpg.html" class="small-tool">
+      <span class="st-icon">📷</span>
+      <div><div class="st-name">TIFF → JPG</div><div class="st-desc">Stampa a web</div></div>
+    </a>
+    <a href="rotate-image.html" class="small-tool">
+      <span class="st-icon">🔄</span>
+      <div><div class="st-name">Ruota immagine</div><div class="st-desc">90° 180° 270°</div></div>
+    </a>
+    <a href="flip-image.html" class="small-tool">
+      <span class="st-icon">↔️</span>
+      <div><div class="st-name">Specchia immagine</div><div class="st-desc">Orizzontale o verticale</div></div>
+    </a>
+  </div>
+
+  <h2>Formati supportati</h2>
+  <div class="formats-strip">
+    <span class="fmt-pill">JPG / JPEG</span>
+    <span class="fmt-pill">PNG</span>
+    <span class="fmt-pill">WebP</span>
+    <span class="fmt-pill">HEIC / HEIF</span>
+    <span class="fmt-pill">GIF</span>
+    <span class="fmt-pill">SVG</span>
+    <span class="fmt-pill">BMP</span>
+    <span class="fmt-pill">TIFF</span>
+    <span class="fmt-pill">ICO</span>
+    <span class="fmt-pill">AVIF</span>
+    <span class="fmt-pill">RAW</span>
+    <span class="fmt-pill">PDF</span>
+  </div>
+
+  <h2>Guida ai formati immagine</h2>
+  <div class="guide-grid">
+    <div class="guide-card">
+      <div class="guide-fmt">JPG</div>
+      <div class="guide-name">Joint Photographic Experts Group</div>
+      <p class="guide-desc">Il formato più diffuso per fotografie. Ottima compressione, leggera perdita di qualità. Ideale per foto e immagini a colori complessi.</p>
+      <span class="guide-tag">📷 Fotografie</span>
+    </div>
+    <div class="guide-card">
+      <div class="guide-fmt">PNG</div>
+      <div class="guide-name">Portable Network Graphics</div>
+      <p class="guide-desc">Supporta la trasparenza (canale alpha). Compressione senza perdita. Ideale per loghi, grafica e screenshot.</p>
+      <span class="guide-tag">🎨 Grafica</span>
+    </div>
+    <div class="guide-card">
+      <div class="guide-fmt">WebP</div>
+      <div class="guide-name">Web Picture Format (Google)</div>
+      <p class="guide-desc">Formato moderno di Google. Fino al 30% più leggero di PNG e JPG con uguale qualità. Ideale per siti web veloci.</p>
+      <span class="guide-tag">🌐 Web</span>
+    </div>
+    <div class="guide-card">
+      <div class="guide-fmt">HEIC</div>
+      <div class="guide-name">High Efficiency Image Container</div>
+      <p class="guide-desc">Formato iPhone/iPad. Metà del peso di JPG con stessa qualità. Non supportato su tutti i dispositivi — convertilo in JPG per condividerlo.</p>
+      <span class="guide-tag">📱 iPhone</span>
+    </div>
+    <div class="guide-card">
+      <div class="guide-fmt">SVG</div>
+      <div class="guide-name">Scalable Vector Graphics</div>
+      <p class="guide-desc">Formato vettoriale basato su XML. Si scala a qualsiasi dimensione senza perdere qualità. Ideale per loghi e icone.</p>
+      <span class="guide-tag">✏️ Vettoriale</span>
+    </div>
+    <div class="guide-card">
+      <div class="guide-fmt">GIF</div>
+      <div class="guide-name">Graphics Interchange Format</div>
+      <p class="guide-desc">Supporta animazioni semplici e trasparenza. Limitato a 256 colori. Usato per meme e animazioni brevi sui social.</p>
+      <span class="guide-tag">🎞️ Animazioni</span>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo"><span class="logo-dot"></span>ConvertFast</div>
+  <p>© 2025 ConvertFast — Tutti i diritti riservati</p>
+</footer>
+
+</body>
+</html>
