@@ -231,13 +231,20 @@
     document.getElementById('b3').classList.add('active');
   }
 
-  function downloadFile() {
+    function downloadFile() {
     if(!convertedBlob) return;
-    const url=URL.createObjectURL(convertedBlob);
-    const a=document.createElement('a');
-    a.href=url; a.download=currentFile.name.replace(/\.[^.]+$/,'_convertfast.jpg');
-    document.body.appendChild(a); a.click();
-    document.body.removeChild(a); URL.revokeObjectURL(url);
+    const filename = currentFile.name.replace(/\.[^.]+$/, '_convertfast.pdf');
+    const reader = new FileReader();
+    reader.onloadend = function() {
+      const a = document.createElement('a');
+      a.href = reader.result;
+      a.download = filename;
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    };
+    reader.readAsDataURL(convertedBlob);
   }
 
   function resetState() {
