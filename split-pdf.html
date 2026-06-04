@@ -199,7 +199,7 @@
       const formData=new FormData();
       formData.append('file',currentFile);
       
-      const response=await fetch(`${API_URL}/api/documents/word-to-pdf`,{method:'POST',body:formData});
+      const response=await fetch(`${API_URL}/api/documents/split-pdf`,{method:'POST',body:formData});
       clearInterval(iv); bar.style.width='100%'; pctEl.textContent='100%';
       if(!response.ok){const err=await response.json().catch(()=>({}));throw new Error(err.detail||'Errore durante la conversione.');}
       convertedBlob=await response.blob();
