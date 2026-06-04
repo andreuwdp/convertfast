@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comprimi Immagini Online Gratis — ConvertFast</title>
+<meta name="description" content="Comprimi JPG e PNG online gratis fino all'80% senza perdita visibile di qualità. Nessuna registrazione, nessun software.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0d0d0d;--bg2:#141414;--bg3:#1a1a1a;--border:rgba(255,255,255,0.07);--border-hover:rgba(255,255,255,0.15);--text:#f0ede8;--text-muted:#888580;--text-dim:#555;--accent:#e8f55a;--accent-dark:#c9d94a;--accent-glow:rgba(232,245,90,0.12);--card-bg:#161616;--radius:14px;--radius-sm:8px;--success:#3ecf8e;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;}
+  nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px;}
+  .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .nav-links{display:flex;align-items:center;gap:8px;list-style:none;}
+  .nav-links a{color:var(--text-muted);text-decoration:none;font-size:14px;padding:6px 14px;border-radius:6px;transition:all 0.2s;}
+  .nav-links a:hover{color:var(--text);background:var(--bg3);}
+  .breadcrumb{padding:14px 5%;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-dim);}
+  .breadcrumb a{color:var(--text-dim);text-decoration:none;}
+  .breadcrumb span{color:var(--text-muted);}
+
+  .ad-top{padding:16px 5% 0;display:flex;justify-content:center;}
+  .ad-banner{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);height:90px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:12px;letter-spacing:0.05em;text-transform:uppercase;width:100%;max-width:728px;}
+
+  .page-layout{display:flex;gap:32px;max-width:1100px;margin:0 auto;padding:48px 5%;}
+  .main-col{flex:1;min-width:0;}
+  .side-col{width:300px;flex-shrink:0;}
+  .ad-side{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);height:600px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:12px;letter-spacing:0.05em;text-transform:uppercase;writing-mode:vertical-rl;position:sticky;top:80px;}
+
+  h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-0.025em;margin-bottom:12px;}
+  .hero-sub{color:var(--text-muted);font-size:16px;margin-bottom:40px;font-weight:300;}
+
+  /* QUALITY SLIDER */
+  .upload-zone{background:var(--card-bg);border:1.5px dashed rgba(232,245,90,0.25);border-radius:20px;padding:56px 32px;text-align:center;cursor:pointer;transition:all 0.25s;}
+  .upload-zone:hover,.upload-zone.dragging{border-color:rgba(232,245,90,0.5);background:rgba(232,245,90,0.02);}
+  .uz-icon{font-size:48px;margin-bottom:20px;display:block;}
+  .uz-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px;}
+  .uz-sub{color:var(--text-muted);font-size:14px;margin-bottom:24px;}
+  .uz-sub strong{color:var(--accent);}
+  .uz-note{margin-top:14px;font-size:12px;color:var(--text-dim);}
+  .btn-primary{background:var(--accent);color:#0d0d0d;border:none;padding:13px 36px;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;display:inline-block;}
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px);}
+  #file-input{display:none;}
+
+  /* COMPRESSION RESULT */
+  .compress-section{display:none;}
+
+  /* QUALITY BOX */
+  .quality-box{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:20px;}
+  .q-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+  .q-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;}
+  .q-val{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--accent);}
+  .q-val span{font-size:16px;color:var(--text-muted);font-family:'DM Sans',sans-serif;font-weight:400;}
+  .q-slider{width:100%;margin-bottom:16px;accent-color:var(--accent);cursor:pointer;height:4px;}
+  .q-presets{display:flex;gap:8px;}
+  .q-preset{background:var(--bg3);border:1px solid var(--border);color:var(--text-muted);padding:6px 14px;border-radius:6px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;}
+  .q-preset:hover{border-color:var(--border-hover);color:var(--text);}
+  .q-preset.active{background:var(--accent-glow);border-color:rgba(232,245,90,0.2);color:var(--accent);}
+  .q-desc{font-size:13px;color:var(--text-dim);margin-top:12px;}
+
+  /* FILE CARDS WITH PREVIEW */
+  .compress-files{display:flex;flex-direction:column;gap:12px;margin-bottom:20px;}
+  .compress-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+  .cc-top{display:flex;align-items:center;gap:16px;padding:16px 20px;}
+  .cc-thumb{width:56px;height:56px;border-radius:8px;object-fit:cover;background:var(--bg3);flex-shrink:0;}
+  .cc-info{flex:1;min-width:0;}
+  .cc-name{font-size:14px;font-weight:500;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .cc-sizes{display:flex;align-items:center;gap:8px;font-size:13px;}
+  .cc-orig{color:var(--text-dim);}
+  .cc-arrow{color:var(--text-dim);}
+  .cc-new{color:var(--success);font-weight:500;}
+  .cc-saved{background:rgba(62,207,142,0.1);color:var(--success);font-size:11px;padding:2px 8px;border-radius:100px;font-weight:600;}
+  .cc-bar-wrap{height:3px;background:var(--bg3);}
+  .cc-bar{height:3px;background:linear-gradient(90deg,var(--accent),var(--success));transition:width 0.6s ease;}
+  .cc-dl{background:none;border:1px solid var(--border);color:var(--text-muted);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px;font-family:'DM Sans',sans-serif;transition:all 0.2s;white-space:nowrap;}
+  .cc-dl:hover{border-color:var(--border-hover);color:var(--text);}
+  .cc-dl.ready{border-color:rgba(62,207,142,0.3);color:var(--success);}
+
+  /* TOTAL SAVINGS */
+  .savings-box{background:rgba(62,207,142,0.06);border:1px solid rgba(62,207,142,0.15);border-radius:var(--radius);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px;display:none;}
+  .sav-stat{text-align:center;}
+  .sav-num{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--success);}
+  .sav-label{font-size:12px;color:var(--text-muted);}
+  .btn-dl-all{background:var(--success);color:#0d0d0d;border:none;padding:13px 28px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;}
+  .btn-dl-all:hover{opacity:0.9;}
+
+  .btn-compress{background:var(--accent);color:#0d0d0d;border:none;padding:14px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;width:100%;margin-bottom:10px;}
+  .btn-compress:hover{background:var(--accent-dark);}
+  .btn-reset{background:none;border:1px solid var(--border);color:var(--text-muted);padding:10px;border-radius:8px;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%;transition:all 0.2s;}
+  .btn-reset:hover{border-color:var(--border-hover);color:var(--text);}
+
+  .ad-inline{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);height:90px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:12px;letter-spacing:0.05em;text-transform:uppercase;margin:40px 0;}
+
+  .related{padding:0 5% 64px;max-width:1100px;margin:0 auto;}
+  .related h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:20px;letter-spacing:-0.01em;}
+  .rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;}
+  .rel-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);transition:all 0.2s;}
+  .rel-card:hover{border-color:var(--border-hover);background:var(--bg3);}
+  .rel-icon{font-size:18px;}
+  .rel-name{font-size:13px;font-weight:500;}
+
+  .faq-section{padding:0 5% 64px;max-width:760px;margin:0 auto;}
+  .faq-section h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin-bottom:24px;}
+  .faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
+  .faq-q{font-size:15px;font-weight:500;margin-bottom:8px;}
+  .faq-a{font-size:14px;color:var(--text-muted);line-height:1.7;}
+
+  footer{border-top:1px solid var(--border);padding:32px 5%;display:flex;justify-content:space-between;align-items:center;}
+  .footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--text);display:flex;align-items:center;gap:6px;}
+  footer p{font-size:13px;color:var(--text-dim);}
+
+  @media(max-width:900px){.side-col{display:none;}.page-layout{padding:48px 5%;}}
+  @media(max-width:768px){.nav-links{display:none;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><span class="logo-dot"></span>ConvertFast</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="image-tools.html">Immagini</a></li>
+    <li><a href="pdf-tools.html">PDF</a></li>
+    <li><a href="video-tools.html">Video</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> › <a href="image-tools.html">Immagini</a> › <span>Comprimi immagine</span>
+</div>
+
+<div class="ad-top">
+  <div class="ad-banner">Spazio pubblicitario — 728×90</div>
+</div>
+
+<div class="page-layout">
+  <div class="main-col">
+
+    <h1>Comprimi immagini</h1>
+    <p class="hero-sub">Riduci il peso di JPG e PNG fino all'80% senza perdita visibile. Perfetto per siti web, email e social media.</p>
+
+    <!-- UPLOAD -->
+    <div id="state-upload">
+      <div class="upload-zone" id="drop-zone">
+        <span class="uz-icon">🗜️</span>
+        <div class="uz-title">Carica immagini da comprimere</div>
+        <p class="uz-sub">JPG e PNG · Trascina qui o <strong>clicca per sfogliare</strong></p>
+        <button class="btn-primary" onclick="document.getElementById('file-input').click()">Scegli immagini</button>
+        <input type="file" id="file-input" accept=".jpg,.jpeg,.png,image/jpeg,image/png" multiple>
+        <p class="uz-note">🔒 Max 100 MB · File eliminati dopo 1 ora</p>
+      </div>
+    </div>
+
+    <!-- COMPRESS SECTION -->
+    <div id="state-compress" class="compress-section">
+
+      <!-- QUALITY SLIDER -->
+      <div class="quality-box">
+        <div class="q-header">
+          <div class="q-title">Livello di compressione</div>
+          <div class="q-val" id="q-display">80 <span>% qualità</span></div>
+        </div>
+        <input type="range" class="q-slider" id="quality-slider" min="10" max="100" value="80" oninput="updateQuality(this.value)">
+        <div class="q-presets">
+          <button class="q-preset" onclick="setQuality(95)">Alta qualità</button>
+          <button class="q-preset active" onclick="setQuality(80)">Bilanciata</button>
+          <button class="q-preset" onclick="setQuality(60)">Massima compressione</button>
+        </div>
+        <div class="q-desc" id="q-desc">Bilanciamento ottimale tra qualità visiva e riduzione del peso. Consigliata per la maggior parte degli utilizzi.</div>
+      </div>
+
+      <div class="compress-files" id="compress-files"></div>
+
+      <!-- SAVINGS BOX -->
+      <div class="savings-box" id="savings-box">
+        <div class="sav-stat">
+          <div class="sav-num" id="sav-pct">0%</div>
+          <div class="sav-label">Riduzione media</div>
+        </div>
+        <div class="sav-stat">
+          <div class="sav-num" id="sav-mb">0 MB</div>
+          <div class="sav-label">Spazio risparmiato</div>
+        </div>
+        <button class="btn-dl-all">⬇️ Scarica tutti</button>
+      </div>
+
+      <button class="btn-compress" id="btn-compress" onclick="startCompress()">⚡ Comprimi ora</button>
+      <button class="btn-reset" onclick="resetAll()">↩ Carica altre immagini</button>
+
+    </div>
+
+    <div class="ad-inline">Spazio pubblicitario — 728×90</div>
+
+  </div>
+
+  <div class="side-col">
+    <div class="ad-side">300×600 — Pubblicità</div>
+  </div>
+</div>
+
+<!-- RELATED -->
+<div class="related">
+  <h2>Strumenti correlati</h2>
+  <div class="rel-grid">
+    <a href="jpg-to-png.html" class="rel-card"><span class="rel-icon">🔄</span><span class="rel-name">JPG → PNG</span></a>
+    <a href="resize-image.html" class="rel-card"><span class="rel-icon">📐</span><span class="rel-name">Ridimensiona</span></a>
+    <a href="png-to-webp.html" class="rel-card"><span class="rel-icon">⚡</span><span class="rel-name">PNG → WebP</span></a>
+    <a href="compress-pdf.html" class="rel-card"><span class="rel-icon">📄</span><span class="rel-name">Comprimi PDF</span></a>
+    <a href="compress-video.html" class="rel-card"><span class="rel-icon">🎬</span><span class="rel-name">Comprimi video</span></a>
+    <a href="heic-to-jpg.html" class="rel-card"><span class="rel-icon">📱</span><span class="rel-name">HEIC → JPG</span></a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <h2>Domande frequenti</h2>
+  <div class="faq-item">
+    <div class="faq-q">Quanto si può ridurre il peso di un'immagine?</div>
+    <p class="faq-a">Dipende dall'immagine originale e dal livello di qualità scelto. In media si ottiene una riduzione del 40-80% del peso originale. Un'immagine da 5 MB può diventare 1-2 MB senza differenze visibili.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Si nota la differenza dopo la compressione?</div>
+    <p class="faq-a">Con la modalità "Bilanciata" (80% qualità) la differenza è praticamente invisibile a occhio nudo. Solo con compressioni estreme (sotto al 50%) potrebbero apparire artefatti nelle aree a colori uniformi.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Perché comprimere le immagini?</div>
+    <p class="faq-a">Immagini più leggere velocizzano il caricamento delle pagine web (fattore SEO importante), riducono l'uso dei dati mobili, permettono di inviare più foto via email e occupano meno spazio su disco.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Funziona anche con file PNG?</div>
+    <p class="faq-a">Sì. Per i PNG utilizziamo ottimizzazione lossless (senza perdita di qualità) che può ridurre il peso del 20-40%, e compressione lossy (con lieve perdita) che può ridurlo fino all'80%.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo"><span class="logo-dot"></span>ConvertFast</div>
+  <p>© 2025 ConvertFast — Tutti i diritti riservati</p>
+</footer>
+
+<script>
+  const dropZone = document.getElementById('drop-zone');
+  const fileInput = document.getElementById('file-input');
+  let allFiles = [];
+  let quality = 80;
+
+  const qDescs = {
+    high: 'Qualità massima con riduzione minima. Ideale per stampa e archivio professionale.',
+    balanced: 'Bilanciamento ottimale tra qualità visiva e riduzione del peso. Consigliata per la maggior parte degli utilizzi.',
+    max: 'Massima riduzione del peso. Qualità leggermente ridotta — ottima per web e social media.'
+  };
+
+  ['dragenter','dragover'].forEach(e=>dropZone.addEventListener(e,ev=>{ev.preventDefault();dropZone.classList.add('dragging');}));
+  ['dragleave','drop'].forEach(e=>dropZone.addEventListener(e,ev=>{ev.preventDefault();dropZone.classList.remove('dragging');}));
+  dropZone.addEventListener('drop',ev=>{if(ev.dataTransfer.files.length)addFiles(Array.from(ev.dataTransfer.files));});
+  fileInput.addEventListener('change',()=>{if(fileInput.files.length)addFiles(Array.from(fileInput.files));fileInput.value='';});
+
+  function addFiles(files) {
+    files.forEach(f=>{if(!allFiles.find(x=>x.name===f.name))allFiles.push(f);});
+    showCompress();
+  }
+
+  function showCompress() {
+    document.getElementById('state-upload').style.display='none';
+    document.getElementById('state-compress').style.display='block';
+    renderCards();
+  }
+
+  function renderCards() {
+    const container = document.getElementById('compress-files');
+    container.innerHTML = '';
+    allFiles.forEach((f,i) => {
+      const sizeMB = (f.size/(1024*1024)).toFixed(2);
+      const est = (f.size*(1-(quality/100)*0.85)/(1024*1024)).toFixed(2);
+      const saved = Math.round((1-est/sizeMB)*100);
+      const card = document.createElement('div');
+      card.className = 'compress-card';
+      card.id = 'card-'+i;
+      card.innerHTML = `
+        <div class="cc-top">
+          <img class="cc-thumb" src="${URL.createObjectURL(f)}" alt="${f.name}">
+          <div class="cc-info">
+            <div class="cc-name">${f.name}</div>
+            <div class="cc-sizes">
+              <span class="cc-orig">${sizeMB} MB</span>
+              <span class="cc-arrow">→</span>
+              <span class="cc-new" id="new-${i}">~${est} MB</span>
+              <span class="cc-saved" id="saved-${i}">-${saved}%</span>
+            </div>
+          </div>
+          <button class="cc-dl" id="dl-${i}">Scarica</button>
+        </div>
+        <div class="cc-bar-wrap"><div class="cc-bar" id="bar-${i}" style="width:0%"></div></div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  function updateQuality(val) {
+    quality = parseInt(val);
+    document.getElementById('q-display').innerHTML = val+' <span>% qualità</span>';
+    document.querySelectorAll('.q-preset').forEach(b=>b.classList.remove('active'));
+    if(quality>=90) document.getElementById('q-desc').textContent = qDescs.high;
+    else if(quality>=70) document.getElementById('q-desc').textContent = qDescs.balanced;
+    else document.getElementById('q-desc').textContent = qDescs.max;
+    if(allFiles.length) renderCards();
+  }
+
+  function setQuality(val) {
+    quality = val;
+    document.getElementById('quality-slider').value = val;
+    document.querySelectorAll('.q-preset').forEach(b=>b.classList.remove('active'));
+    event.target.classList.add('active');
+    updateQuality(val);
+  }
+
+  const API_URL = 'https://converfast-beckend.onrender.com';
+
+  async function startCompress() {
+    document.getElementById('btn-compress').disabled=true;
+    document.getElementById('btn-compress').textContent='⚙️ Compressione in corso...';
+    document.getElementById('savings-box').style.display='none';
+
+    let done=0;
+    let totalSavedBytes=0, totalOrigBytes=0;
+    const blobs = {};
+
+    for (let i = 0; i < allFiles.length; i++) {
+      const f = allFiles[i];
+      const bar = document.getElementById('bar-'+i);
+
+      // Animazione barra
+      let p = 0;
+      const iv = setInterval(() => {
+        p += Math.random() * 8;
+        if (p > 85) p = 85;
+        bar.style.width = p + '%';
+      }, 200);
+
+      try {
+        const formData = new FormData();
+        formData.append('file', f);
+        formData.append('quality', quality);
+
+        const response = await fetch(`${API_URL}/api/images/compress`, {
+          method: 'POST',
+          body: formData
+        });
+
+        clearInterval(iv);
+        bar.style.width = '100%';
+
+        if (!response.ok) throw new Error('Errore compressione');
+
+        const blob = await response.blob();
+        blobs[i] = { blob, name: f.name };
+
+        // Leggi stats dagli header
+        const origSize = parseInt(response.headers.get('X-Original-Size') || f.size);
+        const compSize = parseInt(response.headers.get('X-Compressed-Size') || blob.size);
+        const savedPct = parseFloat(response.headers.get('X-Saved-Percent') || 0);
+
+        totalOrigBytes += origSize;
+        totalSavedBytes += (origSize - compSize);
+
+        const newMB = (compSize/(1024*1024)).toFixed(2);
+        document.getElementById('new-'+i).textContent = newMB + ' MB';
+        document.getElementById('saved-'+i).textContent = '-' + savedPct + '%';
+
+        const dlBtn = document.getElementById('dl-'+i);
+        dlBtn.className = 'cc-dl ready';
+        dlBtn.textContent = '⬇ Scarica';
+        dlBtn.onclick = () => {
+          const url = URL.createObjectURL(blobs[i].blob);
+          const a = document.createElement('a');
+          a.href = url; a.download = blobs[i].name.replace(/\.(jpg|jpeg|png)$/i, '_compressed.$1');
+          document.body.appendChild(a); a.click();
+          document.body.removeChild(a); URL.revokeObjectURL(url);
+        };
+
+      } catch(err) {
+        clearInterval(iv);
+        bar.style.width = '100%';
+        bar.style.background = 'rgba(255,80,80,0.5)';
+        document.getElementById('dl-'+i).textContent = '⚠ Errore';
+      }
+
+      done++;
+      if (done === allFiles.length) {
+        const pct = Math.round(totalSavedBytes / totalOrigBytes * 100);
+        document.getElementById('sav-pct').textContent = Math.max(0,pct) + '%';
+        document.getElementById('sav-mb').textContent = (totalSavedBytes/(1024*1024)).toFixed(1) + ' MB';
+        document.getElementById('savings-box').style.display = 'flex';
+        document.getElementById('btn-compress').style.display = 'none';
+
+        // Bottone scarica tutti
+        document.querySelector('.btn-dl-all').onclick = () => {
+          Object.values(blobs).forEach(b => {
+            const url = URL.createObjectURL(b.blob);
+            const a = document.createElement('a');
+            a.href = url; a.download = b.name.replace(/\.(jpg|jpeg|png)$/i, '_compressed.$1');
+            document.body.appendChild(a); a.click();
+            document.body.removeChild(a); URL.revokeObjectURL(url);
+          });
+        };
+      }
+    }
+  }
+
+
+  function resetAll(){
+    allFiles=[];
+    document.getElementById('state-upload').style.display='block';
+    document.getElementById('state-compress').style.display='none';
+    const btn=document.getElementById('btn-compress');
+    btn.style.display='block';btn.disabled=false;btn.textContent='⚡ Comprimi ora';
+    document.getElementById('savings-box').style.display='none';
+  }
+</script>
+
+</body>
+</html>

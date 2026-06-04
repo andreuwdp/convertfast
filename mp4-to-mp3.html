@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Converti MP4 in MP3 Online Gratis — ConvertFast</title>
+<meta name="description" content="Estrai audio MP3 da video MP4 online gratis. Scegli la qualità audio, converti in secondi, nessuna registrazione richiesta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0d0d0d;--bg2:#141414;--bg3:#1a1a1a;--border:rgba(255,255,255,0.07);--border-hover:rgba(255,255,255,0.15);--text:#f0ede8;--text-muted:#888580;--text-dim:#555;--accent:#e8f55a;--accent-dark:#c9d94a;--accent-glow:rgba(232,245,90,0.12);--card-bg:#161616;--radius:14px;--radius-sm:8px;--success:#3ecf8e;--vid:#9650dc;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;}
+  nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px;}
+  .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .nav-links{display:flex;align-items:center;gap:8px;list-style:none;}
+  .nav-links a{color:var(--text-muted);text-decoration:none;font-size:14px;padding:6px 14px;border-radius:6px;transition:all 0.2s;}
+  .nav-links a:hover{color:var(--text);background:var(--bg3);}
+  .breadcrumb{padding:14px 5%;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-dim);}
+  .breadcrumb a{color:var(--text-dim);text-decoration:none;}
+  .breadcrumb span{color:var(--text-muted);}
+
+  .ad-top{padding:16px 5% 0;display:flex;justify-content:center;}
+  .ad-banner{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);height:90px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:12px;letter-spacing:0.05em;text-transform:uppercase;width:100%;max-width:728px;}
+
+  .page-layout{display:flex;gap:32px;max-width:1100px;margin:0 auto;padding:48px 5%;}
+  .main-col{flex:1;min-width:0;}
+  .side-col{width:300px;flex-shrink:0;}
+  .ad-side{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);height:600px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:12px;letter-spacing:0.05em;text-transform:uppercase;writing-mode:vertical-rl;position:sticky;top:80px;}
+
+  h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-0.025em;margin-bottom:12px;}
+  .hero-sub{color:var(--text-muted);font-size:16px;margin-bottom:16px;font-weight:300;}
+  .use-cases{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px;}
+  .uc-tag{background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);font-size:12px;padding:4px 12px;border-radius:100px;}
+
+  .step-badges{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap;}
+  .badge{display:inline-flex;align-items:center;gap:5px;background:var(--bg3);border:1px solid var(--border);color:var(--text-muted);font-size:12px;padding:4px 12px;border-radius:100px;transition:all 0.3s;}
+  .badge.active{background:var(--accent-glow);border-color:rgba(232,245,90,0.2);color:var(--accent);}
+
+  /* UPLOAD */
+  .upload-zone{background:var(--card-bg);border:1.5px dashed rgba(150,80,220,0.3);border-radius:20px;padding:56px 32px;text-align:center;cursor:pointer;transition:all 0.25s;}
+  .upload-zone:hover,.upload-zone.dragging{border-color:rgba(150,80,220,0.6);background:rgba(150,80,220,0.03);}
+  .uz-icon{font-size:52px;margin-bottom:20px;display:block;}
+  .uz-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px;}
+  .uz-sub{color:var(--text-muted);font-size:14px;margin-bottom:8px;}
+  .uz-sub strong{color:#9650dc;}
+  .uz-formats{display:flex;gap:6px;justify-content:center;margin:14px 0;}
+  .fmt-tag{background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);font-size:11px;padding:3px 10px;border-radius:100px;}
+  .btn-primary{background:var(--accent);color:#0d0d0d;border:none;padding:13px 36px;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;display:inline-block;}
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px);}
+  .uz-note{margin-top:14px;font-size:12px;color:var(--text-dim);}
+  #file-input{display:none;}
+
+  /* VIDEO CARD */
+  .video-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:20px;display:none;}
+  .vc-preview{background:var(--bg3);height:180px;display:flex;align-items:center;justify-content:center;position:relative;}
+  .vc-preview video{width:100%;height:100%;object-fit:cover;}
+  .vc-play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.4);transition:opacity 0.2s;}
+  .vc-play-btn{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;}
+  .vc-info{padding:16px 20px;display:flex;align-items:center;gap:14px;}
+  .vc-icon{width:40px;height:40px;border-radius:8px;background:rgba(150,80,220,0.15);border:1px solid rgba(150,80,220,0.2);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+  .vc-meta{flex:1;}
+  .vc-name{font-size:14px;font-weight:500;margin-bottom:3px;word-break:break-all;}
+  .vc-size{font-size:12px;color:var(--text-dim);}
+  .vc-remove{background:none;border:1px solid var(--border);color:var(--text-muted);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px;font-family:'DM Sans',sans-serif;transition:all 0.2s;}
+  .vc-remove:hover{border-color:var(--border-hover);color:var(--text);}
+
+  /* OPTIONS */
+  .options-box{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;margin-bottom:20px;display:none;}
+  .options-title{font-size:14px;font-weight:500;color:var(--text-muted);margin-bottom:18px;}
+
+  /* QUALITY CARDS */
+  .quality-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
+  .q-card{background:var(--bg3);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:16px 14px;cursor:pointer;transition:all 0.2s;text-align:center;}
+  .q-card:hover{border-color:var(--border-hover);}
+  .q-card.active{background:var(--accent-glow);border-color:rgba(232,245,90,0.3);}
+  .q-card-icon{font-size:22px;margin-bottom:8px;}
+  .q-card-label{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:4px;}
+  .q-card-kbps{font-size:11px;color:var(--text-dim);}
+  .q-card.active .q-card-kbps{color:var(--accent);}
+
+  .opt-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid var(--border);}
+  .opt-label{font-size:14px;}
+  .opt-sub{font-size:12px;color:var(--text-dim);margin-top:2px;}
+  .opt-control select{background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:6px;font-size:13px;font-family:'DM Sans',sans-serif;cursor:pointer;}
+  .opt-control select:focus{outline:none;border-color:var(--border-hover);}
+
+  .btn-convert{background:var(--accent);color:#0d0d0d;border:none;padding:14px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;width:100%;display:none;}
+  .btn-convert:hover{background:var(--accent-dark);}
+
+  /* PROGRESS */
+  .progress-wrap{display:none;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;margin-bottom:20px;}
+  .pw-label{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:6px;}
+  .pw-sub{font-size:14px;color:var(--text-muted);margin-bottom:24px;}
+  .pw-bar-wrap{background:var(--bg3);border-radius:100px;height:6px;margin-bottom:12px;}
+  .pw-bar{background:linear-gradient(90deg,#9650dc,var(--accent));height:6px;border-radius:100px;width:0%;transition:width 0.4s;}
+  .pw-pct{font-size:13px;color:var(--text-dim);}
+
+  /* AUDIO PLAYER */
+  .result-box{display:none;background:var(--card-bg);border:1px solid rgba(62,207,142,0.2);border-radius:var(--radius);overflow:hidden;margin-bottom:16px;}
+  .rb-header{background:rgba(62,207,142,0.06);padding:16px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(62,207,142,0.1);}
+  .rb-icon{font-size:24px;}
+  .rb-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--success);}
+  .rb-sub{font-size:13px;color:var(--text-muted);}
+  .rb-body{padding:20px;}
+  /* fake audio player */
+  .audio-player{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 20px;display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+  .ap-play{width:40px;height:40px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;border:none;font-size:16px;transition:all 0.2s;}
+  .ap-play:hover{background:var(--accent-dark);}
+  .ap-info{flex:1;}
+  .ap-name{font-size:14px;font-weight:500;margin-bottom:6px;}
+  .ap-scrub{width:100%;accent-color:var(--accent);cursor:pointer;height:3px;}
+  .ap-times{display:flex;justify-content:space-between;font-size:11px;color:var(--text-dim);margin-top:4px;}
+  .ap-vol{font-size:18px;cursor:pointer;color:var(--text-muted);}
+  .btn-download{background:var(--success);color:#0d0d0d;border:none;padding:13px 28px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;display:flex;align-items:center;gap:8px;justify-content:center;width:100%;margin-bottom:10px;}
+  .btn-download:hover{opacity:0.9;}
+  .btn-new{background:none;border:1px solid var(--border);color:var(--text-muted);padding:10px;border-radius:8px;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%;transition:all 0.2s;}
+  .btn-new:hover{border-color:var(--border-hover);color:var(--text);}
+
+  .ad-inline{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);height:90px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:12px;letter-spacing:0.05em;text-transform:uppercase;margin:40px 0;}
+
+  .related{padding:0 5% 48px;max-width:1100px;margin:0 auto;}
+  .related h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:20px;}
+  .rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;}
+  .rel-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);transition:all 0.2s;}
+  .rel-card:hover{border-color:var(--border-hover);background:var(--bg3);}
+  .rel-icon{font-size:18px;}
+  .rel-name{font-size:13px;font-weight:500;}
+
+  .faq-section{padding:0 5% 64px;max-width:760px;margin:0 auto;}
+  .faq-section h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin-bottom:24px;}
+  .faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
+  .faq-q{font-size:15px;font-weight:500;margin-bottom:8px;}
+  .faq-a{font-size:14px;color:var(--text-muted);line-height:1.7;}
+
+  footer{border-top:1px solid var(--border);padding:32px 5%;display:flex;justify-content:space-between;align-items:center;}
+  .footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--text);display:flex;align-items:center;gap:6px;}
+  footer p{font-size:13px;color:var(--text-dim);}
+
+  @media(max-width:900px){.side-col{display:none;}.page-layout{padding:48px 5%;}}
+  @media(max-width:768px){.nav-links{display:none;}.quality-cards{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><span class="logo-dot"></span>ConvertFast</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="video-tools.html">Video</a></li>
+    <li><a href="audio-tools.html">Audio</a></li>
+    <li><a href="pdf-tools.html">PDF</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> › <a href="video-tools.html">Video</a> › <span>MP4 in MP3</span>
+</div>
+
+<div class="ad-top">
+  <div class="ad-banner">Spazio pubblicitario — 728×90</div>
+</div>
+
+<div class="page-layout">
+  <div class="main-col">
+
+    <h1>Converti MP4 in MP3</h1>
+    <p class="hero-sub">Estrai la traccia audio da qualsiasi video MP4. Scegli la qualità e scarica l'MP3 in pochi secondi.</p>
+    <div class="use-cases">
+      <span class="uc-tag">🎵 Musica da video</span>
+      <span class="uc-tag">🎙️ Podcast</span>
+      <span class="uc-tag">📚 Lezioni audio</span>
+      <span class="uc-tag">🎤 Registrazioni</span>
+    </div>
+
+    <div class="step-badges">
+      <div class="badge active" id="b1">① Carica video</div>
+      <div class="badge" id="b2">② Scegli qualità</div>
+      <div class="badge" id="b3">③ Scarica MP3</div>
+    </div>
+
+    <!-- UPLOAD -->
+    <div id="state-upload">
+      <div class="upload-zone" id="drop-zone">
+        <span class="uz-icon">🎬</span>
+        <div class="uz-title">Trascina il video MP4 qui</div>
+        <p class="uz-sub">Oppure <strong>clicca per sfogliare</strong> dal computer</p>
+        <div class="uz-formats">
+          <span class="fmt-tag">MP4</span><span class="fmt-tag">MOV</span>
+          <span class="fmt-tag">AVI</span><span class="fmt-tag">MKV</span>
+          <span class="fmt-tag">WebM</span><span class="fmt-tag">WMV</span>
+        </div>
+        <button class="btn-primary" onclick="document.getElementById('file-input').click()">Scegli video</button>
+        <input type="file" id="file-input" accept="video/*,.mp4,.mov,.avi,.mkv,.webm,.wmv">
+        <p class="uz-note">🔒 Max 500 MB gratis · File eliminati dopo 1 ora</p>
+      </div>
+    </div>
+
+    <!-- VIDEO PREVIEW CARD -->
+    <div class="video-card" id="video-card">
+      <div class="vc-preview" id="vc-preview">
+        <div style="font-size:48px;">🎬</div>
+      </div>
+      <div class="vc-info">
+        <div class="vc-icon">🎬</div>
+        <div class="vc-meta">
+          <div class="vc-name" id="vc-name">video.mp4</div>
+          <div class="vc-size" id="vc-size">— MB · Durata: —</div>
+        </div>
+        <button class="vc-remove" onclick="resetAll()">✕ Rimuovi</button>
+      </div>
+    </div>
+
+    <!-- OPTIONS -->
+    <div class="options-box" id="options-box">
+      <div class="options-title">🎵 Qualità audio output</div>
+      <div class="quality-cards">
+        <div class="q-card" onclick="selectQuality(this,'128')" id="qc-128">
+          <div class="q-card-icon">📻</div>
+          <div class="q-card-label">Standard</div>
+          <div class="q-card-kbps">128 kbps</div>
+        </div>
+        <div class="q-card active" onclick="selectQuality(this,'192')" id="qc-192">
+          <div class="q-card-icon">🎧</div>
+          <div class="q-card-label">Alta qualità</div>
+          <div class="q-card-kbps">192 kbps ✦</div>
+        </div>
+        <div class="q-card" onclick="selectQuality(this,'320')" id="qc-320">
+          <div class="q-card-icon">🎼</div>
+          <div class="q-card-label">Massima</div>
+          <div class="q-card-kbps">320 kbps</div>
+        </div>
+      </div>
+
+      <div class="opt-row">
+        <div>
+          <div class="opt-label">Formato output</div>
+          <div class="opt-sub">Scegli il formato audio desiderato</div>
+        </div>
+        <div class="opt-control">
+          <select id="format-select">
+            <option value="mp3">MP3 (consigliato)</option>
+            <option value="wav">WAV (lossless)</option>
+            <option value="aac">AAC (Apple)</option>
+            <option value="ogg">OGG (open source)</option>
+            <option value="flac">FLAC (lossless)</option>
+          </select>
+        </div>
+      </div>
+      <div class="opt-row">
+        <div>
+          <div class="opt-label">Canali audio</div>
+          <div class="opt-sub">Stereo o mono</div>
+        </div>
+        <div class="opt-control">
+          <select>
+            <option>Stereo (2 canali)</option>
+            <option>Mono (1 canale)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-convert" id="btn-convert" onclick="startConvert()">⚡ Estrai audio MP3</button>
+
+    <!-- PROGRESS -->
+    <div class="progress-wrap" id="progress-wrap">
+      <div class="pw-label">Estrazione audio in corso...</div>
+      <p class="pw-sub">Stiamo estraendo la traccia audio dal video. Ci vorranno pochi secondi.</p>
+      <div class="pw-bar-wrap"><div class="pw-bar" id="pw-bar"></div></div>
+      <div class="pw-pct" id="pw-pct">0%</div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="result-box" id="result-box">
+      <div class="rb-header">
+        <span class="rb-icon">✅</span>
+        <div>
+          <div class="rb-title">Audio estratto con successo!</div>
+          <div class="rb-sub">Il tuo MP3 è pronto per il download</div>
+        </div>
+      </div>
+      <div class="rb-body">
+        <div class="audio-player">
+          <button class="ap-play" id="ap-play" onclick="togglePlay()">▶</button>
+          <div class="ap-info">
+            <div class="ap-name" id="ap-name">audio.mp3</div>
+            <input type="range" class="ap-scrub" id="ap-scrub" min="0" max="100" value="0">
+            <div class="ap-times"><span id="ap-cur">0:00</span><span id="ap-dur">3:42</span></div>
+          </div>
+          <span class="ap-vol">🔊</span>
+        </div>
+        <button class="btn-download" onclick="downloadAudio()">⬇️ Scarica MP3</button>
+        <button class="btn-new" onclick="resetAll()">↩ Converti un altro video</button>
+      </div>
+    </div>
+
+    <div class="ad-inline">Spazio pubblicitario — 728×90</div>
+
+  </div>
+
+  <div class="side-col">
+    <div class="ad-side">300×600 — Pubblicità</div>
+  </div>
+</div>
+
+<!-- RELATED -->
+<div class="related">
+  <h2>Strumenti correlati</h2>
+  <div class="rel-grid">
+    <a href="compress-video.html" class="rel-card"><span class="rel-icon">🗜️</span><span class="rel-name">Comprimi video</span></a>
+    <a href="mov-to-mp4.html" class="rel-card"><span class="rel-icon">🔄</span><span class="rel-name">MOV → MP4</span></a>
+    <a href="mp4-to-gif.html" class="rel-card"><span class="rel-icon">🎞️</span><span class="rel-name">MP4 → GIF</span></a>
+    <a href="mp3-to-wav.html" class="rel-card"><span class="rel-icon">🎧</span><span class="rel-name">MP3 → WAV</span></a>
+    <a href="wav-to-mp3.html" class="rel-card"><span class="rel-icon">🎵</span><span class="rel-name">WAV → MP3</span></a>
+    <a href="trim-video.html" class="rel-card"><span class="rel-icon">✂️</span><span class="rel-name">Taglia video</span></a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <h2>Domande frequenti</h2>
+  <div class="faq-item">
+    <div class="faq-q">Quale qualità audio scegliere?</div>
+    <p class="faq-a">192 kbps è la scelta consigliata per la maggior parte degli usi: buona qualità e file non troppo pesante. Scegli 320 kbps se ascolti su cuffie di qualità o per musica. 128 kbps è sufficiente per podcast e voce.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Funziona anche con video MOV, AVI e MKV?</div>
+    <p class="faq-a">Sì! Puoi caricare video in qualsiasi formato — MP4, MOV, AVI, MKV, WebM, WMV — e il tool estrarrà la traccia audio in MP3 (o il formato da te scelto).</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">La qualità audio dipende dal video originale?</div>
+    <p class="faq-a">Sì. Se la traccia audio del video originale è di bassa qualità (es. registrazione con microfono del telefono), l'MP3 risultante avrà la stessa qualità. Il tool non può migliorare la qualità originale, solo estrarla e codificarla.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Qual è la differenza tra MP3, WAV e FLAC?</div>
+    <p class="faq-a">MP3 è compresso (con leggera perdita) ma molto compatibile. WAV e FLAC sono lossless (senza perdita) e di qualità superiore, ma i file sono molto più grandi. Per uso quotidiano MP3 a 192kbps è più che sufficiente.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Posso usarlo per estrarre audio da video di YouTube?</div>
+    <p class="faq-a">Puoi caricare file video che hai scaricato legalmente (tuoi video, contenuti con licenza libera, ecc.). Non supportiamo il download diretto da YouTube per rispettare i termini di servizio della piattaforma.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo"><span class="logo-dot"></span>ConvertFast</div>
+  <p>© 2025 ConvertFast — Tutti i diritti riservati</p>
+</footer>
+
+<script>
+  const dropZone = document.getElementById('drop-zone');
+  const fileInput = document.getElementById('file-input');
+
+  ['dragenter','dragover'].forEach(e=>dropZone.addEventListener(e,ev=>{ev.preventDefault();dropZone.classList.add('dragging');}));
+  ['dragleave','drop'].forEach(e=>dropZone.addEventListener(e,ev=>{ev.preventDefault();dropZone.classList.remove('dragging');}));
+  dropZone.addEventListener('drop',ev=>{if(ev.dataTransfer.files[0])handleFile(ev.dataTransfer.files[0]);});
+  fileInput.addEventListener('change',()=>{if(fileInput.files[0])handleFile(fileInput.files[0]);});
+
+  function handleFile(f) {
+    currentFile = f;
+    document.getElementById('state-upload').style.display='none';
+    document.getElementById('vc-name').textContent=f.name;
+    document.getElementById('vc-size').textContent=(f.size/(1024*1024)).toFixed(1)+' MB';
+    document.getElementById('ap-name').textContent=f.name.replace(/\.[^.]+$/,'')+'.mp3';
+    const prev=document.getElementById('vc-preview');
+    const video=document.createElement('video');
+    video.src=URL.createObjectURL(f);
+    video.style.cssText='width:100%;height:100%;object-fit:cover;';
+    video.muted=true; video.preload='metadata';
+    video.onloadedmetadata=()=>{
+      const dur=Math.round(video.duration);
+      const m=Math.floor(dur/60), s=dur%60;
+      document.getElementById('vc-size').textContent=(f.size/(1024*1024)).toFixed(1)+' MB · Durata: '+m+':'+(s<10?'0':'')+s;
+    };
+    video.currentTime=1;
+    prev.innerHTML=''; prev.appendChild(video);
+    document.getElementById('video-card').style.display='block';
+    document.getElementById('options-box').style.display='block';
+    document.getElementById('btn-convert').style.display='block';
+    document.getElementById('b2').classList.add('active');
+  }
+
+  const API_URL = 'https://converfast-beckend.onrender.com';
+  let currentFile = null;
+  let convertedBlob = null;
+  let audioElement = null;
+
+  function selectQuality(el,val) {
+    document.querySelectorAll('.q-card').forEach(c=>c.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  async function startConvert() {
+    if (!currentFile) return;
+
+    // Leggi qualità selezionata
+    const activeQ = document.querySelector('.q-card.active');
+    const kbps = activeQ ? activeQ.querySelector('.q-card-kbps').textContent.replace(/[^0-9]/g,'') : '192';
+    const qualityMap = {'128':'medium','192':'high','320':'maximum'};
+    const quality = qualityMap[kbps] || 'high';
+
+    // Leggi formato selezionato
+    const fmt = document.getElementById('format-select').value || 'mp3';
+
+    document.getElementById('btn-convert').style.display='none';
+    document.getElementById('options-box').style.display='none';
+    document.getElementById('progress-wrap').style.display='block';
+
+    let p = 0;
+    const bar = document.getElementById('pw-bar');
+    const pctEl = document.getElementById('pw-pct');
+    const iv = setInterval(()=>{
+      p += Math.random() * 3 + 1;
+      if (p > 88) p = 88;
+      bar.style.width = p + '%';
+      pctEl.textContent = Math.round(p) + '%';
+    }, 400);
+
+    try {
+      const formData = new FormData();
+      formData.append('file', currentFile);
+      formData.append('target_format', fmt);
+      formData.append('quality', quality);
+
+      const response = await fetch(`${API_URL}/api/audio/extract-from-video`, {
+        method: 'POST',
+        body: formData
+      });
+
+      clearInterval(iv);
+      bar.style.width = '100%';
+      pctEl.textContent = '100%';
+
+      if (!response.ok) {
+        const err = await response.json().catch(()=>({}));
+        throw new Error(err.detail || 'Errore durante l\'estrazione audio.');
+      }
+
+      convertedBlob = await response.blob();
+      const audioURL = URL.createObjectURL(convertedBlob);
+
+      // Collega player audio reale
+      audioElement = new Audio(audioURL);
+      audioElement.onloadedmetadata = () => {
+        const dur = Math.round(audioElement.duration);
+        const m = Math.floor(dur/60), s = dur%60;
+        document.getElementById('ap-dur').textContent = m+':'+(s<10?'0':'')+s;
+      };
+      audioElement.ontimeupdate = () => {
+        const pct = (audioElement.currentTime / audioElement.duration) * 100;
+        document.getElementById('ap-scrub').value = pct || 0;
+        const cur = Math.round(audioElement.currentTime);
+        document.getElementById('ap-cur').textContent = Math.floor(cur/60)+':'+(cur%60<10?'0':'')+cur%60;
+      };
+      audioElement.onended = () => {
+        document.getElementById('ap-play').textContent = '▶';
+      };
+
+      document.getElementById('ap-scrub').oninput = (e) => {
+        if (audioElement) audioElement.currentTime = (e.target.value / 100) * audioElement.duration;
+      };
+
+      setTimeout(showResult, 300);
+
+    } catch(err) {
+      clearInterval(iv);
+      document.getElementById('progress-wrap').style.display='none';
+      document.getElementById('options-box').style.display='block';
+      document.getElementById('btn-convert').style.display='block';
+      alert('⚠️ ' + err.message);
+    }
+  }
+
+  function showResult() {
+    document.getElementById('progress-wrap').style.display='none';
+    document.getElementById('result-box').style.display='block';
+    document.getElementById('b3').classList.add('active');
+  }
+
+  function togglePlay() {
+    if (!audioElement) return;
+    if (audioElement.paused) {
+      audioElement.play();
+      document.getElementById('ap-play').textContent = '⏸';
+    } else {
+      audioElement.pause();
+      document.getElementById('ap-play').textContent = '▶';
+    }
+  }
+
+  function downloadAudio() {
+    if (!convertedBlob) return;
+    const fmt = document.getElementById('format-select')?.value || 'mp3';
+    const url = URL.createObjectURL(convertedBlob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = currentFile.name.replace(/\.[^.]+$/, '_convertfast.') + fmt;
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a); URL.revokeObjectURL(url);
+  }
+
+  function resetAll() {
+    if (audioElement) { audioElement.pause(); audioElement = null; }
+    convertedBlob = null; currentFile = null;
+    document.getElementById('state-upload').style.display='block';
+    document.getElementById('video-card').style.display='none';
+    document.getElementById('options-box').style.display='none';
+    document.getElementById('btn-convert').style.display='none';
+    document.getElementById('progress-wrap').style.display='none';
+    document.getElementById('result-box').style.display='none';
+    document.getElementById('pw-bar').style.width='0%';
+    document.getElementById('pw-pct').textContent='0%';
+    document.getElementById('ap-play').textContent='▶';
+    document.getElementById('ap-scrub').value=0;
+    ['b2','b3'].forEach(id=>document.getElementById(id).classList.remove('active'));
+    fileInput.value='';
+  }
+
+</script>
+
+</body>
+</html>
